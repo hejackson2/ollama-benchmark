@@ -1,0 +1,34 @@
+Build a bash script in the ~/Downloads directory that will create a CSV file comparing the performance of each availble model against a common prompt.  The prompt is located in the ~/Downloads/prompt.txt file.
+
+The general idea is to capture the output from 'ollama run --verbose <model>' for each model and append that to the CSV file.  Save the all output from each model to <model name>_output.txt.  Before any model is run, ensure that ollama is not currently running via the 'ollama ps' command, and if it is, use the 'ollama stop <model>' to unload the model, and verify with the 'ollama ps' command again before running the 'ollama run --verbose <model>' command.
+
+
+The performance data for the session will be printed at the end of the reply in a manner similar to this:
+
+total duration:       18.452671792s
+load duration:        79.727875ms
+prompt eval count:    27 token(s)
+prompt eval duration: 279.257ms
+prompt eval rate:     96.69 tokens/s
+eval count:           255 token(s)
+eval duration:        18.092575s
+eval rate:            14.09 tokens/s
+
+For the common CSV file, name it model_comparison.csv and have a header row with the following set of columns:
+
+model
+total duration (s)
+load duration (ms)
+prompt eval count (s)
+prompt eval duration (ms)
+prompt eval rate (tokens / s)
+eval count (tokens)
+eval duration (s)
+eval rate (tokens / s)
+
+
+append the perforamance data from each model to the end of the CSV file.
+
+Be sure to test the script against at least two models to ensure the CSV file is propertly formatted and contains correct data before presuming the script is ready.
+
+
