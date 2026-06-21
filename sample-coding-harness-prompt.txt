@@ -16,6 +16,7 @@ eval rate:            14.09 tokens/s
 
 For the common CSV file, name it model_comparison.csv and have a header row with the following set of columns:
 
+host
 model
 total duration (s)
 load duration (ms)
@@ -28,6 +29,8 @@ eval rate (tokens / s)
 
 
 append the perforamance data from each model to the end of the CSV file.
+
+The 'host' column should be filled with the hostname of the device the ollama server is being run on.
 
 Be sure to test the script against at least two models to ensure the CSV file is propertly formatted and contains correct data before presuming the script is ready.
 
